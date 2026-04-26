@@ -8,7 +8,7 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   // Use the environment variable if available (for production), otherwise fallback to localhost
-  const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000/api/products";
+  const API_URL = process.env.REACT_APP_API_URL || "https://test-wmt-3hnp.onrender.com";
 
   useEffect(() => {
     fetchProducts();
@@ -54,28 +54,28 @@ function App() {
   return (
     <div className="container">
       <h1>Product Galaxy</h1>
-      
+
       <div className="card">
         <form onSubmit={addProduct}>
           <div className="input-group">
-            <input 
-              name="name" 
-              placeholder="Product Name" 
+            <input
+              name="name"
+              placeholder="Product Name"
               value={formData.name}
-              onChange={handleInputChange} 
+              onChange={handleInputChange}
               required
             />
-            <input 
-              name="price" 
-              type="number" 
-              placeholder="Price ($)" 
+            <input
+              name="price"
+              type="number"
+              placeholder="Price ($)"
               value={formData.price}
-              onChange={handleInputChange} 
+              onChange={handleInputChange}
               required
             />
-            <textarea 
-              name="description" 
-              placeholder="Description (Optional)" 
+            <textarea
+              name="description"
+              placeholder="Description (Optional)"
               value={formData.description}
               onChange={handleInputChange}
             />
