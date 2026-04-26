@@ -7,7 +7,8 @@ function App() {
   const [formData, setFormData] = useState({ name: '', price: '', description: '' });
   const [loading, setLoading] = useState(true);
 
-  const API_URL = "http://localhost:5000/api/products";
+  // Use the environment variable if available (for production), otherwise fallback to localhost
+  const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000/api/products";
 
   useEffect(() => {
     fetchProducts();
